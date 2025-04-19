@@ -58,31 +58,31 @@ export const MemeForm: FC<MemeFormProps> = ({
       <Controller
         control={control}
         name="title"
-        render={({ field }) => (
+        render={({ field, fieldState }) => (
           <Input
             {...field}
             isRequired
-            errorMessage="Please enter a title"
+            errorMessage={fieldState.error?.message}
             label="Title"
             labelPlacement="outside"
-            maxLength={400}
+            maxLength={100}
+            minLength={3}
             placeholder="Enter a title"
             type="text"
           />
         )}
       />
-
       <Controller
         control={control}
         name="image"
-        render={({ field }) => (
+        render={({ field, fieldState }) => (
           <Input
             {...field}
             isRequired
-            errorMessage="Please enter an image URL"
+            errorMessage={fieldState.error?.message}
             label="Image URL"
             labelPlacement="outside"
-            maxLength={200}
+            maxLength={100}
             placeholder="Enter an image URL"
             type="url"
           />
