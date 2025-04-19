@@ -28,8 +28,8 @@ https://github.com/Yevhenns/memes.git
 ### Install dependencies
 
 ```bash
+cd memes
 npm install
-cd meme-directory
 ```
 
 ### Run the development server
@@ -57,6 +57,14 @@ Meme data is editable and stored in local storage
 Form validation and control handled via React Hook Form
 
 Fully responsive and mobile-friendly
+
+## ℹ️ Data Handling
+
+On the first launch, the app saves mocked meme data to localStorage.
+
+All further operations (viewing, editing) work entirely from local storage.
+
+No backend is required — the UI is fully functional on the client side.
 
 ## 📱 Compatibility
 
