@@ -1,32 +1,35 @@
-# Vite & HeroUI Template
+# Meme Directory — React + HeroUI
 
-This is a template for creating applications using Vite and HeroUI (v2).
-
-[Try it on CodeSandbox](https://githubbox.com/frontio-ai/vite-template)
+This project is a simple directory of popular memes built with React using the
+HeroUI component library. It is deployed on Railway.
 
 ## Technologies Used
 
-- [Vite](https://vitejs.dev/guide/)
-- [HeroUI](https://heroui.com)
-- [Tailwind CSS](https://tailwindcss.com)
-- [Tailwind Variants](https://tailwind-variants.org)
-- [TypeScript](https://www.typescriptlang.org)
-- [Framer Motion](https://www.framer.com/motion)
+- React + TypeScript
 
-## How to Use
+- HeroUI
+
+- React Hook Form
+
+- Local Storage
+
+- Railway (deployment)
+
+- TailwindCSS (via HeroUI)
+
+## 🚀 How to Use
 
 To clone the project, run the following command:
 
 ```bash
-git clone https://github.com/frontio-ai/vite-template.git
+https://github.com/Yevhenns/memes.git
 ```
 
 ### Install dependencies
 
-You can use one of them `npm`, `yarn`, `pnpm`, `bun`, Example using `npm`:
-
 ```bash
 npm install
+cd meme-directory
 ```
 
 ### Run the development server
@@ -35,16 +38,30 @@ npm install
 npm run dev
 ```
 
-### Setup pnpm (optional)
+## 🧩 Features
 
-If you are using `pnpm`, you need to add the following code to your `.npmrc` file:
+10 popular memes with defined properties
 
-```bash
-public-hoist-pattern[]=*@heroui/*
-```
+2 static pages:
 
-After modifying the `.npmrc` file, you need to run `pnpm install` again to ensure that the dependencies are installed correctly.
+- Table view: displays memes using HeroUI Table, with editing via HeroUI Modal
 
-## License
+- List view: memes rendered as HeroUI Cards with image, name, likes, and link
 
-Licensed under the [MIT license](https://github.com/frontio-ai/vite-template/blob/main/LICENSE).
+Page switching is handled via HeroUI Navbar
+
+Uses default HeroUI theme and styles
+
+Meme data is editable and stored in local storage
+
+Form validation and control handled via React Hook Form
+
+Fully responsive and mobile-friendly
+
+## 📱 Compatibility
+
+✅ Latest Chrome
+
+✅ Windows / macOS / Android
+
+✅ Mobile responsive
