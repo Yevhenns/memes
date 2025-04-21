@@ -34,6 +34,7 @@ export const MemeCard: FC<MemeCardProps> = ({ meme }) => {
       <Divider />
       <CardBody>
         <p>{meme.title}</p>
+        <p>Likes: {meme.likes}</p>
       </CardBody>
       <Divider />
       <CardFooter>
