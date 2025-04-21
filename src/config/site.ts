@@ -12,6 +12,10 @@ export const siteConfig = {
       label: "Memes",
       href: "/memes",
     },
+    {
+      label: "Favorite",
+      href: "/favorite",
+    },
   ],
   navMenuItems: [
     {
@@ -21,6 +25,10 @@ export const siteConfig = {
     {
       label: "Memes",
       href: "/memes",
+    },
+    {
+      label: "Favorite",
+      href: "/favorite",
     },
   ],
 };

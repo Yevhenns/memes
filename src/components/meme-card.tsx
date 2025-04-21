@@ -6,10 +6,14 @@ import {
   Divider,
   Link,
   Image,
+  Button,
 } from "@heroui/react";
 import { FC, useState } from "react";
 
+import { HeartIcon } from "./icons";
+
 import { Meme } from "@/types";
+import { useGetFavoriteMemes } from "@/hooks/useGetFavoriteMemes";
 
 type MemeCardProps = {
   meme: Meme;
@@ -17,6 +21,10 @@ type MemeCardProps = {
 
 export const MemeCard: FC<MemeCardProps> = ({ meme }) => {
   const [isImageLoaded, setIsImageLoaded] = useState(true);
+
+  const { toggleFavorite, favoriteIds } = useGetFavoriteMemes();
+
+  const isFavorite = favoriteIds.includes(meme.id);
 
   return (
     <Card className="max-w-[400px]">
@@ -39,10 +47,13 @@ export const MemeCard: FC<MemeCardProps> = ({ meme }) => {
         </div>
       </CardBody>
       <Divider />
-      <CardFooter>
+      <CardFooter className="flex justify-between">
         <Link isExternal showAnchorIcon href={meme.image}>
           Visit meme.
         </Link>
+        <Button isIconOnly onPress={() => toggleFavorite(meme.id)}>
+          <HeartIcon filled={isFavorite ? true : false} />
+        </Button>
       </CardFooter>
     </Card>
   );
