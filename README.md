@@ -1,9 +1,9 @@
-# Meme Directory — React + HeroUI
+# Memes — React + HeroUI
 
 This project is a simple directory of popular memes built with React using the
 HeroUI component library. It is deployed on Railway.
 
-## Technologies Used
+## 🛠️ Technologies Used
 
 - React + TypeScript
 
@@ -58,9 +58,11 @@ Form validation and control handled via React Hook Form
 
 Fully responsive and mobile-friendly
 
+Supports both light & dark themes
+
 ## ℹ️ Data Handling
 
-On the first launch, the app saves mocked meme data to localStorage.
+On the first launch, the app saves mocked memes data to local storage.
 
 All further operations (viewing, editing) work entirely from local storage.
 
@@ -74,7 +76,7 @@ No backend is required — the UI is fully functional on the client side.
 
 ✅ Mobile responsive
 
-## Screenshots
+## 🖼️ Screenshots
 
 <p align="center">
   <img src="https://github.com/user-attachments/assets/31d9e519-ad8a-4384-84c3-69c018aa4996" alt="image" width="600">
