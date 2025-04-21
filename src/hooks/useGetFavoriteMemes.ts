@@ -34,7 +34,7 @@ export const useGetFavoriteMemes = () => {
     if (items) {
       setFavoriteIds(JSON.parse(items));
     }
-  }, [favoriteIds]);
+  }, []);
 
   return { favoriteMemes, favoriteIds, toggleFavorite };
 };
