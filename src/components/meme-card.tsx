@@ -32,10 +32,12 @@ export const MemeCard: FC<MemeCardProps> = ({ meme }) => {
         {!isImageLoaded && <p>Meme image is not found</p>}
       </CardHeader>
       <Divider />
-      <div className="mt-auto p-3">
-        <p>{meme.title}</p>
-        <p>Likes: {meme.likes}</p>
-      </div>
+      <CardBody>
+        <div className="mt-auto">
+          <p>{meme.title}</p>
+          <p>Likes: {meme.likes}</p>
+        </div>
+      </CardBody>
       <Divider />
       <CardFooter>
         <Link isExternal showAnchorIcon href={meme.image}>
