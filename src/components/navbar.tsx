@@ -26,7 +26,6 @@ export const Navbar = () => {
             href="/"
           >
             <Logo />
-            <p className="font-bold text-inherit">ACME</p>
           </Link>
         </NavbarBrand>
         <div className="hidden sm:flex gap-4 justify-start ml-2">

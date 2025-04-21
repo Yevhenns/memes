@@ -42,6 +42,7 @@ export const MemeTable: FC<MemeTableProps> = ({
         return (
           <div className="relative flex justify-center items-center gap-2">
             <Button
+              isIconOnly
               onPress={() => {
                 onOpen();
                 currentMemeHandler(meme);
