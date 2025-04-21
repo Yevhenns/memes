@@ -1,5 +1,12 @@
-import { addToast, Button, Form, Input } from "@heroui/react";
-import { FC, useEffect } from "react";
+import {
+  addToast,
+  Button,
+  Form,
+  Input,
+  Select,
+  SelectItem,
+} from "@heroui/react";
+import { FC } from "react";
 import { Controller, useForm } from "react-hook-form";
 
 import { Meme } from "@/types";
@@ -17,18 +24,25 @@ export const MemeForm: FC<MemeFormProps> = ({
   memes,
   setMemes,
 }) => {
-  const { handleSubmit, control, setValue } = useForm({
+  const { handleSubmit, control } = useForm({
     defaultValues: {
-      title: "",
-      image: "",
+      title: currentMeme?.title || "",
+      image: currentMeme?.image || "",
+      likes: currentMeme?.likes || "",
     },
   });
 
-  const onSubmit = (data: { title: string; image: string }) => {
+  const likesCount = Array.from({ length: 99 }, (_, i) => i + 1);
+
+  const onSubmit = (data: {
+    title: string;
+    image: string;
+    likes: number | string;
+  }) => {
     if (currentMeme) {
       const updatedMemes = memes.map((meme) =>
         meme.id === currentMeme.id
-          ? { ...meme, title: data.title, image: data.image }
+          ? { ...meme, title: data.title, image: data.image, likes: data.likes }
           : meme,
       );
 
@@ -46,15 +60,8 @@ export const MemeForm: FC<MemeFormProps> = ({
     }
   };
 
-  useEffect(() => {
-    if (currentMeme) {
-      setValue("title", currentMeme.title);
-      setValue("image", currentMeme.image);
-    }
-  }, [currentMeme]);
-
   return (
-    <Form className="w-full" onSubmit={handleSubmit(onSubmit)}>
+    <Form className="w-full gap-4" onSubmit={handleSubmit(onSubmit)}>
       <Controller
         control={control}
         name="title"
@@ -86,6 +93,26 @@ export const MemeForm: FC<MemeFormProps> = ({
             placeholder="Enter an image URL"
             type="url"
           />
+        )}
+      />
+      <Controller
+        control={control}
+        name="likes"
+        render={({ field }) => (
+          <Select
+            isRequired
+            {...field}
+            label="Likes count"
+            labelPlacement="outside"
+            placeholder="Select likes count"
+            selectedKeys={[field.value?.toString()]}
+          >
+            {likesCount.map((like) => (
+              <SelectItem key={like} textValue={like.toString()}>
+                {like}
+              </SelectItem>
+            ))}
+          </Select>
         )}
       />
       <div className="py-4 flex gap-2 ml-auto">
