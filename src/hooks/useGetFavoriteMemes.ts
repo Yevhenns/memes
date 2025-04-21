@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
+import { addToast } from "@heroui/toast";
 
 import { useGetMemes } from "./useGetMemes";
-import { addToast } from "@heroui/toast";
 
 export const useGetFavoriteMemes = () => {
   const [favoriteIds, setFavoriteIds] = useState<number[]>([]);

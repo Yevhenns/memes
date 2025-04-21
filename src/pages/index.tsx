@@ -1,5 +1,6 @@
 import { useDisclosure } from "@heroui/modal";
 import { useState } from "react";
+import { Button } from "@heroui/button";
 
 import { title } from "@/components/primitives";
 import DefaultLayout from "@/layouts/default";
@@ -12,6 +13,11 @@ import { useGetMemes } from "@/hooks/useGetMemes";
 export default function IndexPage() {
   const [currentMeme, setCurrentMeme] = useState<Meme | null>(null);
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
+  const {
+    isOpen: createIsOpen,
+    onOpen: createOnOpen,
+    onOpenChange: createOnOpenChange,
+  } = useDisclosure();
 
   const { memes, setMemes } = useGetMemes();
 
@@ -23,6 +29,7 @@ export default function IndexPage() {
     <DefaultLayout>
       <section className="flex flex-col items-center justify-center gap-8 py-8 md:py-10">
         <h1 className={title()}>Memes table</h1>
+        <Button onPress={createOnOpen}>Create meme</Button>
         <MemeTable
           currentMemeHandler={currentMemeHandler}
           memes={memes}
@@ -34,6 +41,13 @@ export default function IndexPage() {
             memes={memes}
             setMemes={setMemes}
             onOpenChange={onOpenChange}
+          />
+        </MemeModal>
+        <MemeModal isOpen={createIsOpen} onOpenChange={createOnOpenChange}>
+          <MemeForm
+            memes={memes}
+            setMemes={setMemes}
+            onOpenChange={createOnOpenChange}
           />
         </MemeModal>
       </section>

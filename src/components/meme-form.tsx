@@ -13,7 +13,7 @@ import { Meme } from "@/types";
 
 type MemeFormProps = {
   onOpenChange: () => void;
-  currentMeme: Meme | null;
+  currentMeme?: Meme | null;
   memes: Meme[];
   setMemes: React.Dispatch<React.SetStateAction<Meme[]>>;
 };
@@ -57,7 +57,30 @@ export const MemeForm: FC<MemeFormProps> = ({
       });
 
       onOpenChange();
+
+      return;
     }
+
+    const newMeme = {
+      id: memes.length + 1,
+      title: data.title,
+      image: data.image,
+      likes: data.likes,
+    };
+
+    const updatedMemes = [...memes, newMeme];
+
+    localStorage.setItem("memes", JSON.stringify(updatedMemes));
+
+    setMemes(updatedMemes);
+
+    addToast({
+      title: "Meme created successfully",
+      timeout: 3000,
+      shouldShowTimeoutProgress: true,
+    });
+
+    onOpenChange();
   };
 
   return (
