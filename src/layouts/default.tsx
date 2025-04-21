@@ -12,6 +12,8 @@ export default function DefaultLayout({
   useEffect(() => {
     const items = localStorage.getItem("memes");
 
+    if (items) return;
+
     if (!items) {
       localStorage.setItem("memes", JSON.stringify(memes));
     }

@@ -8,6 +8,8 @@ export const useGetMemes = () => {
   useEffect(() => {
     const items = localStorage.getItem("memes");
 
+    if (!items) return;
+
     if (items) {
       setMemes(JSON.parse(items));
     }
