@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 
 import { useGetMemes } from "./useGetMemes";
+import { addToast } from "@heroui/toast";
 
 export const useGetFavoriteMemes = () => {
   const [favoriteIds, setFavoriteIds] = useState<number[]>([]);
@@ -18,12 +19,24 @@ export const useGetFavoriteMemes = () => {
       setFavoriteIds(filteredArray);
       localStorage.setItem("favorite memes", JSON.stringify(filteredArray));
 
+      addToast({
+        title: "Removed from favorite",
+        timeout: 3000,
+        shouldShowTimeoutProgress: true,
+      });
+
       return;
     }
     const filteredArray = [...favoriteIds, id];
 
     setFavoriteIds(filteredArray);
     localStorage.setItem("favorite memes", JSON.stringify(filteredArray));
+
+    addToast({
+      title: "Added to favorite",
+      timeout: 3000,
+      shouldShowTimeoutProgress: true,
+    });
   };
 
   useEffect(() => {
