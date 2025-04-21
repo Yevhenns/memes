@@ -79,9 +79,13 @@ No backend is required — the UI is fully functional on the client side.
 ## 🖼️ Screenshots
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/31d9e519-ad8a-4384-84c3-69c018aa4996" alt="image" width="600">
+  <img src="https://github.com/user-attachments/assets/a502d3d3-2f82-4203-a973-7d37eda388c0" alt="image" width="600">
 </p>
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/3822f6f6-aa60-49ad-aad2-a3057d383fa0" alt="image" width="600">
+  <img src="https://github.com/user-attachments/assets/a8192519-e5ff-411a-8896-7f18084e9342" alt="image" width="600">
+</p>
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/1adede4c-fbc3-4542-a803-8601e7d5502b" alt="image" width="600">
 </p>
